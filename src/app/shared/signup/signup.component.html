@@ -1,0 +1,88 @@
+<section class="signin p-4 text-center">
+    <div class="closedil" (click)="closedialog()">
+        <img class="cursor-pointer" src="../../../assets/images/closedialog.png" />
+    </div>
+    <div class="icon pt-2">
+        <img src="../../../assets/images/enquiry.png" alt="">
+    </div>
+    <div class="heading pt-2">
+        <h3>
+            Sign <span>up</span>
+        </h3>
+    </div>
+    <form class="formmm" [formGroup]="signUpForm" (ngSubmit)="signUp()">
+        <div class="py-2">
+            <input class="form-control" type="text" placeholder="First Name" formControlName="firstName"
+            [ngClass]="{'border border-danger' : isControlIsInValid('firstName')}" />
+        </div>
+        <div class="text-left" *ngIf="isControlIsInValid('firstName')">
+            <span class="text-danger">Required</span>
+        </div>
+        <div class="py-2">
+            <input type="text" class="form-control" placeholder="Last Name" formControlName="lastName" />
+        </div>
+        <div class="py-2">
+            <select formControlName="accountType" class="form-control">
+              <option value="0">Buyers</option>
+              <option value="1">Suppliers</option>
+  
+            </select>
+          </div>
+          <div class="py-2">
+              <input class="form-control" type="text" placeholder="Company Name"  formControlName="companyName"
+             />
+          </div>
+        
+        <div class="py-2">
+            <input type="email" class="form-control" placeholder="Email Address" formControlName="email" 
+            [ngClass]="{'border border-danger' : isControlIsInValid('email')}" />
+        </div>
+        <div class="text-left" *ngIf="(signUpForm.get('email').touched && signUpForm.get('email').errors?.required) && !signUpForm.get('email').errors?.pattern">
+            <span class="text-danger">Required</span>
+        </div>
+        <div class="text-left" *ngIf="!signUpForm.get('email').errors?.required && signUpForm.get('email').errors?.pattern">
+            <span class="text-danger">Invalid Email</span>
+        </div>
+        <div class="py-2">
+            <input type="text" class="form-control" placeholder="Phone Number" formControlName="phoneNumber" 
+            [ngClass]="{'border border-danger' : isControlIsInValid('phoneNumber')}" />
+        </div>
+        <div class="text-left" *ngIf="isControlIsInValid('phoneNumber')">
+            <span class="text-danger">Required</span>
+        </div>
+    
+
+        <div class="py-2">
+            <input type="password" class="form-control" placeholder="Password" formControlName="password"
+            [ngClass]="{'border border-danger' : isControlIsInValid('password')}" />
+        </div>
+        <div class="text-left" *ngIf="isControlIsInValid('password')">
+            <span class="text-danger">Required</span>
+        </div>
+
+        <div class="py-2">
+            <input type="password" class="form-control" placeholder="Confirm Password" formControlName="confirmPassword"
+            [ngClass]="{'border border-danger' : isControlIsInValid('confirmPassword') || (signUpForm.get('confirmPassword').dirty && isConfirmPasswordValid() == false)}" />
+        </div>
+        <div class="text-left" *ngIf="isControlIsInValid('confirmPassword')">
+            <span class="text-danger">Required</span>
+        </div>
+        <div class="text-left" *ngIf="!signUpForm.get('confirmPassword').errors?.required && isConfirmPasswordValid() == false">
+            <span class="text-danger">Password & Confirm Password does not match</span>
+        </div>
+        <div class="py-3">
+            <div class="shortdes px-3">
+                By continuing, you agree to Exos <a (click)="closedialog()" routerLink="/terms">Terms of Use</a> and consent to ts <a  (click)="closedialog()" routerLink="/privacy-policy">Privacy Policy</a> 
+            </div>
+        </div>
+        <div class="py-3">
+            <button type="submit" class="form-control">Submit
+                <img class="icon" src="../../../assets/images/contact-arrow.png " alt="">
+            </button>
+        </div>
+        <div class="pt-3">
+            <p class="dess">Already a member? <span class="signup cursor-pointer"(click)="opensignin()">Sign In</span></p>
+        </div>
+    </form>
+
+</section>

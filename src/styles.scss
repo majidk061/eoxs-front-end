@@ -1,0 +1,307 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+@import "~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+
+@font-face {
+  font-family: VAGRounded;
+  src: url(./assets/font/VAG-Rounded-Std-Light_47298.ttf);
+}
+@font-face {
+  font-family: VGARoundedThin;
+  src: url(./assets/font/VAG-Rounded-Std-Thin_47299.ttf);
+}
+@font-face {
+  font-family: VAGRoundedBT;
+  src: url(./assets/font/VAG-Rounded-Std-Bold_47297.ttf);
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: VGARoundedThin;
+}
+
+:focus {
+  outline: none;
+}
+
+.carousel-indicators li {
+  width: 12px;
+  height: 12px;
+
+  border-radius: 21px;
+  border-top: unset;
+  border-bottom: unset;
+}
+.settext {
+  .owl-stage {
+    padding-bottom: 250px;
+  }
+}
+.banner {
+  .carousel-indicators {
+    bottom: 80px;
+  }
+}
+
+.producttable {
+  submit .headtext {
+    font-family: VAGRounded;
+    font-size: 52px;
+    font-weight: 300;
+    letter-spacing: 2.08px;
+    color: #3e3e3e;
+  }
+  .bordergh {
+    // background-image: url(../../../../assets/images/tableborder.png);
+    // background-size: contain;
+    // background-repeat: no-repeat;
+    border: 15px solid transparent;
+    border-image: url(/assets/images/tableborder.png) 9 round;
+  }
+  table {
+    border-collapse: collapse;
+    tr,
+    th,
+    td {
+      border: none;
+    }
+    tr {
+      vertical-align: middle;
+      th {
+        vertical-align: middle;
+        text-align: center;
+        font-family: VAGRounded;
+        font-size: 18px;
+        font-weight: 300;
+        letter-spacing: 0.72px;
+        color: #36bebe;
+      }
+      td {
+        vertical-align: middle;
+        text-align: center;
+        font-family: VAGRounded;
+        font-size: 13px;
+        font-weight: 300;
+        letter-spacing: 0.72px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 120px;
+        color: rgba(62, 62, 62, 0.7);
+      }
+    }
+    tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+  }
+}
+
+.detail-tab {
+  .mat-tab-label-active {
+    border-radius: 5px;
+    background-color: #ebebeb;
+    opacity: 1;
+  }
+  .mat-tab-label {
+    font-family: VAGRounded;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0.94px;
+    color: #1c1c1c;
+    opacity: 1;
+  }
+  .mat-tab-nav-bar,
+  .mat-tab-header {
+    border: none;
+  }
+  .mat-expansion-panel:not([class*="mat-elevation-z"]) {
+    box-shadow: none;
+  }
+  .mat-expansion-panel-header-title {
+    font-family: VAGRounded;
+    font-size: 20.5px;
+    font-weight: 300;
+    letter-spacing: 0.82px;
+    color: #1c1c1c;
+  }
+}
+
+.enquiry-btn {
+
+  .btn {
+    color: #ffffff !important;
+    font-size: 11.5px;
+
+    font-weight: 600;
+
+    border-radius: 5px;
+    border: solid 1px #d5d5d5;
+    background-color: #656565;
+    font-size: 11.5px;
+    font-weight: 600;
+    width: 69px;
+    margin: 0 auto;
+    padding: 14px 4px;
+    letter-spacing: 0.46px;
+    color: #ffffff;
+
+  }
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background: #007bff !important;
+}
+
+.make-offer {
+  button {
+    background-color: #3fc3c1;
+    border-radius: 5px;
+    border: solid 1px #d5d5d5;
+    background-color: #41c2c2;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.46px;
+    color: #ffffff;
+    width: 74px;
+    margin: 0 auto;
+  }
+  button:hover {
+    color: #ffffff !important;
+  }
+}
+
+
+.enquirypopup,
+.signin,
+.forgot,
+.signup {
+  position: relative;
+  img {
+    width: 127px;
+    height: 105px;
+  }
+  .frgt-pass {
+    color: #9a9a9a;
+
+    font-family: VAGRounded;
+    font-size: 1 8px;
+  }
+  .dess {
+    font-size: 18px;
+    color: #9a9a9a;
+    font-family: VAGRounded;
+
+    .signup {
+      font-weight: 600;
+      font-family: VAGRounded;
+    }
+  }
+  .closedil {
+    img {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      height: 30px;
+      cursor: pointer;
+      width: 30px;
+    }
+  }
+  h3 {
+    font-family: VAGRounded;
+    font-size: 38px;
+
+    letter-spacing: 1.92px;
+    color: #1c1c1c;
+    span {
+      font-weight: 600;
+    }
+  }
+  .des {
+    font-family: VAGRounded;
+    font-size: 20px;
+
+    letter-spacing: 0.8px;
+    color: #1c1c1c;
+  }
+  .formmm {
+    input,select {
+      height: 50px;
+      border-radius: 10px;
+      border: solid 1px #bcbcbc;
+    }
+    .shortdes {
+      font-size: 16px;
+
+      letter-spacing: 0.64px;
+      color: #9a9a9a;
+    }
+    button {
+      height: 61px;
+      border-radius: 10px;
+      background-color: #000000;
+      font-family: VAGRoundedBT;
+      font-size: 18px;
+      position: relative;
+
+      letter-spacing: 0.72px;
+      color: #ffffff;
+      .icon {
+        position: absolute;
+        right: 40px;
+        top: 15px;
+        height: 30px;
+        width: 30px;
+      }
+    }
+  }
+}
+
+
+//blog page detail css
+
+
+// ------------ Custom Scrolbar
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #04a9f4;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #04a9f4;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000;
+}
+
+// -------------- Custom Scrollbar
+
+
+
+.owl-carousel .owl-item img{
+	width: unset!important
+}
+
+.productimg{
+  img{
+    width: 100%!important;
+    height: 330px;
+
+  }
+}
+.productcard{
+  padding: 13px;
+}

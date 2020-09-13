@@ -1,0 +1,52 @@
+<section class="enquirypopup p-4 text-center">
+<div class="closedil" (click)="closedialog()">
+    <img class="cursor-pointer" src="../../../assets/images/closedialog.png" />
+</div>
+    <div class="icon pt-2">
+        <img src="../../../assets/images/enquiry.png" alt="">
+    </div>
+    <div class="heading pt-2">
+        <h3>
+            Enquiry <span>Details</span>
+        </h3>
+        <p class="des">Send product details</p>
+    </div>
+    <form [formGroup]="enquiryForm" class="formmm" (ngSubmit)="submitEnquiry()">
+        <div class="py-2">
+            <input class="form-control" type="email" placeholder="Email" formControlName="email" 
+            [ngClass]="{'border border-danger' : enquiryForm.get('email').touched && enquiryForm.get('email').invalid}" />
+        </div>
+        <div class="text-left" *ngIf="(enquiryForm.get('email').touched && enquiryForm.get('email').errors?.required) && !enquiryForm.get('email').errors?.pattern">
+            <span class="text-danger">Required</span>
+        </div>
+        <div class="text-left" *ngIf="!enquiryForm.get('email').errors?.required && enquiryForm.get('email').errors?.pattern">
+            <span class="text-danger">Invalid Email</span>
+        </div>
+        <div class="py-2">
+            <input type="text" class="form-control" placeholder="Name" formControlName="name"
+            [ngClass]="{'border border-danger' : enquiryForm.get('name').touched && enquiryForm.get('name').invalid}" />
+        </div>
+        <div class="text-left" *ngIf="enquiryForm.get('name').touched && enquiryForm.get('name').errors?.required">
+            <span class="text-danger">Required</span>
+        </div>
+        <div class="py-2">
+            <input type="text" class="form-control" placeholder="Contact Number" formControlName="contactNumber" 
+            [ngClass]="{'border border-danger' : enquiryForm.get('contactNumber').touched && enquiryForm.get('contactNumber').invalid}" />
+        </div>
+        <div class="text-left" *ngIf="enquiryForm.get('contactNumber').touched && enquiryForm.get('contactNumber').errors?.required">
+            <span class="text-danger">Required</span>
+        </div>
+        <div class="py-3">
+            <div class="shortdes px-3">
+                Our Sales Repsentative will get back to you 
+with pricing ASAP.
+            </div>
+        </div>
+        <div class="py-3">
+<button type="submit" class="form-control" >Submit
+    <img class="icon" src="../../../assets/images/contact-arrow.png " alt="">
+</button>
+        </div>
+    </form>
+
+</section>

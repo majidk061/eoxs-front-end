@@ -1,0 +1,56 @@
+<app-productfilters></app-productfilters>
+
+<section class="producttable">
+  <div class="container">
+    <div class="row mt-5 pt-3 mb-4">
+      <div class="col-md-12">
+        <div class="table-responsive bordergh crochet p-3">
+          <table class="table">
+            <tr>
+              <th>Product ID</th>
+              <th>Product</th>
+              <th>Quality</th>
+              <th>Thickness(in)</th>
+              <th>Width(in)</th>
+              <th>Weight(lb)</th>
+              <th>PIW</th>
+              <th>Location</th>
+              <th>Coilnumber</th>
+              <th>Price</th>
+              <th>Action</th>
+            </tr>
+            <tr class="cursor-pointer"
+            routerLinkActive="active"
+
+            *ngFor="let elements of list">
+              <td (click)="navigateToDetails(elements)">TSS{{ elements.objectID }}</td>
+              <td (click)="navigateToDetails(elements)">{{ elements.PRODUCT || "N/A" }}</td>
+              <td (click)="navigateToDetails(elements)">{{ elements.QUALITY || "N/A" }}</td>
+              <td (click)="navigateToDetails(elements)">{{ elements.THICKNESS_IN + 0.002 || "N/A" }}</td>
+              <td (click)="navigateToDetails(elements)">{{ elements.WIDTH_IN + 1 || "N/A" }}</td>
+              <td (click)="navigateToDetails(elements)">{{ elements.WEIGHT_LB + 1240 || "N/A" }}</td>
+              <td (click)="navigateToDetails(elements)">{{ elements.PIW || "N/A" }}</td>
+              <td (click)="navigateToDetails(elements)">{{ elements.LOCATION || "N/A" }}</td>
+              <td (click)="navigateToDetails(elements)">{{ elements.COILNUMBER || "N/A" }}</td>
+              <td>Price</td>
+
+              <td class="d-flex" style="max-width: 300px;">
+                <div class="enquiry-btn py-2">
+                  <button class="btn" (click)="openDialogenquiry(elements)">Enquiry</button>
+              
+
+                </div>
+                <div class="make-offer py-2">
+                  <button class="btn " (click)="makeAnOffer(elements)">Make An Offer</button>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <div id="pagination">
+            <ais-pagination></ais-pagination>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
